@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.data.domain.Pageable;
 
 import com.satya.test.SpringBootTest.bean.CustomerBean;
-import com.satya.test.SpringBootTest.bean.CustomerGroupByTag;
 
 /**
  * 
@@ -14,8 +13,8 @@ import com.satya.test.SpringBootTest.bean.CustomerGroupByTag;
  */
 public interface CustomerService {
 
-	public List<CustomerBean> getAllCustomer(Pageable pageable);
-
-	public List<CustomerGroupByTag> getAllCustomerGroupByTag();
+	public List<CustomerBean> getAllCustomers(Pageable pageable);
+	
+	public List<CustomerBean> getAllCustomers();
 
 }
