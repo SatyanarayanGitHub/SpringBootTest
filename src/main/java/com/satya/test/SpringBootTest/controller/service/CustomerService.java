@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.data.domain.Pageable;
 
+import com.satya.test.SpringBootTest.bean.AverageTimeBean;
 import com.satya.test.SpringBootTest.bean.CustomerBean;
 
 /**
@@ -14,7 +15,10 @@ import com.satya.test.SpringBootTest.bean.CustomerBean;
 public interface CustomerService {
 
 	public List<CustomerBean> getAllCustomers(Pageable pageable);
-	
+
 	public List<CustomerBean> getAllCustomers();
 
+	public AverageTimeBean averageProspectTime(long prospectTime, long customerTime);
+
+	public AverageTimeBean averageCustomerTime(long prospectTime, long customerTime);
 }

@@ -48,12 +48,12 @@ public class DatabaseLoader implements CommandLineRunner {
 		Customer c4 = new Customer("John", "Dean", "John@gmail.com", Status.PROSPECTS.name(), 162864786L, 0L, vip);
 		Customer c5 = new Customer("Morgan", "Maxwell", "morgan@gmail.com", Status.CUSTOMER.name(), 122864586L, 162114586L, promoter);
 		Customer c6 = new Customer("Kivel", "Patil", "kivel@gmail.com", Status.PROSPECTS.name(), 82864586L, 0L, vip);
-		Customer c7 = new Customer("Howard", "Jadav", "howard@gmail.com", Status.PROSPECTS.name(), 162464586L, 0L, red);
+		Customer c7 = new Customer("Howard", "Jadav", "howard@gmail.com", Status.LEADS.name(), 0L, 0L, red);
 		Customer c8 = new Customer("Sanju", "Gill", "gill@gmail.com", Status.PROSPECTS.name(), 155864856L, 0L, orange);
-		Customer c9 = new Customer("Smith", "Peterson", "smith@gmail.com", Status.PROSPECTS.name(), 134841286L, 0L, promoter);
+		Customer c9 = new Customer("Smith", "Peterson", "smith@gmail.com", Status.CUSTOMER.name(), 134841286L, 94841286L, promoter);
 		Customer c10 = new Customer("Andrews", "wagh", "andrews@gmail.com", Status.LEADS.name(), 0L, 0L, vip);
 		Customer c11 = new Customer("Morgan", "Kapoor", "morgan@gmail.com", Status.PROSPECTS.name(), 162864586L, 0L, red);
-		Customer c12 = new Customer("Teddy", "den", "teddy@gmail.com", Status.PROSPECTS.name(), 162864586L, 0L, orange);
+		Customer c12 = new Customer("Teddy", "den", "teddy@gmail.com", Status.PROSPECTS.name(), 62864586L, 0L, orange);
 		Customer c13 = new Customer("David", "Starc", "david@gmail.com", Status.LEADS.name(), 0L, 0L, vip);
 		Customer c14 = new Customer("Glenn", "Warner", "glen@gmail.com", Status.CUSTOMER.name(), 92464536L, 162864586L,	vip);
 		Customer c15 = new Customer("Marcus", "Stoinis", "marcus@gmail.com", Status.PROSPECTS.name(), 151464586L, 0L, orange);

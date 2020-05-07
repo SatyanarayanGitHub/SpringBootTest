@@ -30,14 +30,6 @@ public class Customer implements Serializable {
 	@Column(name = "CUSTOMER_ID", updatable = false)
 	private Integer id;
 
-	@Override
-	public String toString() {
-		return "Customer [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-				+ ", customLabel=" + customLabel + ", customField=" + customField + ", status=" + status
-				+ ", prospectTime=" + prospectTime + ", customerTime=" + customerTime + ", customerTag=" + customerTag
-				+ "]";
-	}
-
 	@Column(name = "FIRST_NAME")
 	private String firstName;
 
@@ -63,7 +55,7 @@ public class Customer implements Serializable {
 	private Long customerTime;
 
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@JoinColumn(name = "customerTag_customerTagId", nullable = false)
+	@JoinColumn(name = "customerTagId", nullable = false)
 	@JsonIgnore
 	private CustomerTag customerTag;
 
@@ -162,4 +154,11 @@ public class Customer implements Serializable {
 		this.customerTag = customerTag;
 	}
 
+	@Override
+	public String toString() {
+		return "Customer [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+				+ ", customLabel=" + customLabel + ", customField=" + customField + ", status=" + status
+				+ ", prospectTime=" + prospectTime + ", customerTime=" + customerTime + ", customerTag=" + customerTag
+				+ "]";
+	}
 }

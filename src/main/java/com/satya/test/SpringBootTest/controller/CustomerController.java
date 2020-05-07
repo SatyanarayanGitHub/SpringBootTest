@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.satya.test.SpringBootTest.bean.AverageTimeBean;
 import com.satya.test.SpringBootTest.bean.CustomerBean;
 import com.satya.test.SpringBootTest.controller.service.CustomerService;
 import com.satya.test.SpringBootTest.controller.service.CustomerTagService;
@@ -51,6 +52,16 @@ public class CustomerController {
 		return this.customerTagService.getAllTags();
 	}
 
-	
+	@GetMapping(value = "averageProspectTime")
+	public AverageTimeBean calculateAverageProspectTime() {
+
+		return this.customerService.averageProspectTime(0, 0);
+	}
+
+	@GetMapping(value = "averageCustomerTime")
+	public AverageTimeBean calculateAverageCustomerTime() {
+
+		return this.customerService.averageCustomerTime(0, 0);
+	}
 
 }

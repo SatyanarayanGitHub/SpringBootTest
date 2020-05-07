@@ -26,7 +26,7 @@ public class CustomerTag implements Serializable {
 
 	@Id
 	@GeneratedValue
-	@Column(name = "CUSTOMERTAG_ID", updatable = false)
+	@Column(name = "CUSTOMER_TAG_ID", updatable = false)
 	private Integer id;
 
 	@Column(name = "tagName")
