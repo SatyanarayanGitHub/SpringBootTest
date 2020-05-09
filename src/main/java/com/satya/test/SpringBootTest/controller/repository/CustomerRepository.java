@@ -15,8 +15,8 @@ import com.satya.test.SpringBootTest.entity.Customer;
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Integer> {
 
-	List<Customer> findByProspectTimeGreaterThanAndCustomerTime(long prospectTime, long customerTime);
+	List<Customer> findByProspectTimeGreaterThan(long prospectTime);
 	
-	List<Customer> findByProspectTimeGreaterThanAndCustomerTimeGreaterThan(long prospectTime, long customerTime);
+	List<Customer> findByCustomerTimeGreaterThan(long customerTime);
 
 }

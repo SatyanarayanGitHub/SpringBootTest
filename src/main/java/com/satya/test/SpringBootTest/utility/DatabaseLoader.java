@@ -50,7 +50,7 @@ public class DatabaseLoader implements CommandLineRunner {
 		Customer c6 = new Customer("Kivel", "Patil", "kivel@gmail.com", Status.PROSPECTS.name(), 82864586L, 0L, vip);
 		Customer c7 = new Customer("Howard", "Jadav", "howard@gmail.com", Status.LEADS.name(), 0L, 0L, red);
 		Customer c8 = new Customer("Sanju", "Gill", "gill@gmail.com", Status.PROSPECTS.name(), 155864856L, 0L, orange);
-		Customer c9 = new Customer("Smith", "Peterson", "smith@gmail.com", Status.CUSTOMER.name(), 134841286L, 94841286L, promoter);
+		Customer c9 = new Customer("Smith", "Peterson", "smith@gmail.com", Status.CUSTOMER.name(), 114841286L, 94841286L, promoter);
 		Customer c10 = new Customer("Andrews", "wagh", "andrews@gmail.com", Status.LEADS.name(), 0L, 0L, vip);
 		Customer c11 = new Customer("Morgan", "Kapoor", "morgan@gmail.com", Status.PROSPECTS.name(), 162864586L, 0L, red);
 		Customer c12 = new Customer("Teddy", "den", "teddy@gmail.com", Status.PROSPECTS.name(), 62864586L, 0L, orange);

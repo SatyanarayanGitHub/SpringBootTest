@@ -18,7 +18,7 @@ public interface CustomerService {
 
 	public List<CustomerBean> getAllCustomers();
 
-	public AverageTimeBean averageProspectTime(long prospectTime, long customerTime);
+	public AverageTimeBean averageProspectTime(long prospectTime);
 
-	public AverageTimeBean averageCustomerTime(long prospectTime, long customerTime);
+	public AverageTimeBean averageCustomerTime(long customerTime);
 }

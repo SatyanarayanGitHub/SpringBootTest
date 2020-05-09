@@ -6,8 +6,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.satya.test.SpringBootTest.bean.AverageTimeBean;
@@ -28,22 +28,22 @@ public class CustomerController {
 		this.customerTagService = customerTagService;
 	}
 
-	@GetMapping(value = "hello")
-	public String sayHello() {
-		return "BE Spring Boot - Hello";
-	}
+	@GetMapping(value = "customers/all")
+	public List<CustomerBean> getAllCustomer() {
+		return this.customerService.getAllCustomers();
 
-	@GetMapping(value = "customers/{pageNo}/{pageSize}")
-	public List<CustomerBean> getAllCustomer(@PathVariable("pageNo") int pageNo,
-			@PathVariable("pageSize") int pageSize) {
-
-		Pageable pageable = PageRequest.of(pageNo, pageSize, Sort.by("firstName").and(Sort.by("LastName")));
-		return this.customerService.getAllCustomers(pageable);
 	}
 
 	@GetMapping(value = "customers")
-	public List<CustomerBean> getAllCustomer() {
-		return this.customerService.getAllCustomers();
+	public List<CustomerBean> getAllCustomer(@RequestParam("pageNo") int pageNo,
+			@RequestParam("pageSize") int pageSize) {
+		System.out.println("PageNo: " + pageNo + "\tPageSize: " + pageSize);
+
+		if (pageNo > 0) {
+			Pageable pageable = PageRequest.of((pageNo - 1), pageSize, Sort.by("firstName").and(Sort.by("LastName")));
+			return this.customerService.getAllCustomers(pageable);
+		} else
+			throw new IllegalArgumentException("Page index must not be less than one!");
 
 	}
 
@@ -55,13 +55,13 @@ public class CustomerController {
 	@GetMapping(value = "averageProspectTime")
 	public AverageTimeBean calculateAverageProspectTime() {
 
-		return this.customerService.averageProspectTime(0, 0);
+		return this.customerService.averageProspectTime(0);
 	}
 
 	@GetMapping(value = "averageCustomerTime")
 	public AverageTimeBean calculateAverageCustomerTime() {
 
-		return this.customerService.averageCustomerTime(0, 0);
+		return this.customerService.averageCustomerTime(0);
 	}
 
 }

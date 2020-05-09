@@ -47,10 +47,9 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public AverageTimeBean averageProspectTime(long prospectTime, long customerTime) {
+	public AverageTimeBean averageProspectTime(long prospectTime) {
 
-		List<Customer> customers = this.customerRepository.findByProspectTimeGreaterThanAndCustomerTime(prospectTime,
-				customerTime);
+		List<Customer> customers = this.customerRepository.findByProspectTimeGreaterThan(prospectTime);
 
 		//customers.stream().forEach(customer -> System.out.println(customer));
 
@@ -63,8 +62,8 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public AverageTimeBean averageCustomerTime(long prospectTime, long customerTime) {
-		List<Customer> customers = this.customerRepository.findByProspectTimeGreaterThanAndCustomerTimeGreaterThan(prospectTime, customerTime);
+	public AverageTimeBean averageCustomerTime(long customerTime) {
+		List<Customer> customers = this.customerRepository.findByCustomerTimeGreaterThan(customerTime);
 
 		customers.stream().forEach(customer -> System.out.println(customer));
 
